@@ -1,0 +1,21 @@
+{
+  "name": "node-boiler-plate",
+  "version": "1.0.0",
+  "description": "Shopify app boiler plate",
+  "main": "./server/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "NODE_ENV=dev node ./server/index.js"
+  },
+  "keywords": [
+    "shopify",
+    "shopify-apps"
+  ],
+  "author": "Anit Bishwas",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "mongoose": "^8.6.3"
+  }
+}
