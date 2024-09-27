@@ -16,4 +16,4 @@
 I have added the detailed explaination how these works in the app in Docs **./_developer/_docs** section
 
 ## Installation link
-- You can install the application in the desired store using [<ngrok-url>/api/auth?shop=<store-name>.myshopify.com]
+- You can install the application in the desired store using [ngrok-url/api/auth?shop=store-name.myshopify.com]

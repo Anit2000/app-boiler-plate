@@ -1,50 +1,39 @@
-import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css';
-import createApp from '@shopify/app-bridge';
-import {getSessionToken} from '@shopify/app-bridge/utilities';
-import { useQueryParams } from 'raviger';
+import { AppProvider as PolarisProvider } from '@shopify/polaris';
+import { useEffect } from 'react';
+import AppBridgeProvider from './providers/AppBridgeProvider';
 
-const generateSessionToken = async() =>{
-  const params = useQueryParams();
-  const app = createApp({
-    apiKey:process.env.APP_CLIENT_ID,
-    host:new URL(location).searchParams.get("host"),
-    forceRedirect:true
-  })
-
-  // const sessionToken = await getSessionToken(app);
-
-  // console.log(sessionToken)
-}
 function App() {
-   generateSessionToken()
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+    <PolarisProvider>
+      <AppBridgeProvider>
+        <ui-nav-menu>
+          <a href="/debug/graphql">Fetch Data</a>
+        </ui-nav-menu>
+        <div>
+          <a href="https://vitejs.dev" target="_blank">
+            <img src={viteLogo} className="logo" alt="Vite logo" />
+          </a>
+          <a href="https://react.dev" target="_blank">
+            <img src={reactLogo} className="logo react" alt="React logo" />
+          </a>
+        </div>
+        <h1>Vite + React</h1>
+        <div className="card">
+          <button >
+            count is 0
+          </button>
+          <p>
+            Edit <code>src/App.jsx</code> and save to test HMR
+          </p>
+        </div>
+        <p className="read-the-docs">
+          Click on the Vite and React logos to learn more
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      </AppBridgeProvider>
+    </PolarisProvider>
   )
 }
 
