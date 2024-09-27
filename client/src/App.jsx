@@ -1,9 +1,25 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import createApp from '@shopify/app-bridge';
+import {getSessionToken} from '@shopify/app-bridge/utilities';
+import { useQueryParams } from 'raviger';
 
+const generateSessionToken = async() =>{
+  const params = useQueryParams();
+  const app = createApp({
+    apiKey:process.env.APP_CLIENT_ID,
+    host:new URL(location).searchParams.get("host"),
+    forceRedirect:true
+  })
+
+  // const sessionToken = await getSessionToken(app);
+
+  // console.log(sessionToken)
+}
 function App() {
+   generateSessionToken()
   const [count, setCount] = useState(0)
 
   return (

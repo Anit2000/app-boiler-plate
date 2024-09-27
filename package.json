@@ -5,7 +5,8 @@
   "main": "./server/index.js",
   "type": "module",
   "scripts": {
-    "dev": "NODE_ENV=dev node ./server/index.js"
+    "dev": "NODE_ENV=dev node ./server/index.js",
+    "ngrok": "ngrok http 8082"
   },
   "keywords": [
     "shopify",
@@ -14,10 +15,15 @@
   "author": "Anit Bishwas",
   "license": "ISC",
   "dependencies": {
+    "@shopify/app-bridge": "^3.7.10",
+    "@shopify/app-bridge-react": "^4.1.5",
+    "@shopify/polaris": "^13.9.0",
+    "@shopify/shopify-api": "^11.4.1",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "fs": "^0.0.1-security",
     "mongoose": "^8.6.3",
+    "raviger": "^4.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "vite": "^5.4.8"
