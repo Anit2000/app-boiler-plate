@@ -5,7 +5,7 @@
   "main": "./server/index.js",
   "type": "module",
   "scripts": {
-    "dev": "NODE_ENV=dev node ./server/index.js",
+    "dev": "NODE_ENV=dev nodemon server/index.js --ignore client/ --ignore dist/ --ignore server/index.js",
     "ngrok": "ngrok http 8082"
   },
   "keywords": [
