@@ -7,7 +7,9 @@
 Right now we only have tackeled the development code we'll do the production one later
 
 - [ ] Creating a vite server
-<code>
+
+
+```
     import { createServer as createViteServer }
     const viteServer = await createViteSever({
         root : path.resolve(process.cwd(),"client"),
@@ -18,7 +20,9 @@ Right now we only have tackeled the development code we'll do the production one
     });
     app.use(viteServer.middlewares);
     const template = await viteServer.transformFromIndexHtml(url,fs,readFileSync(path.resolve(process.cwd()."client","index.html"),"utf-8"))
-</code>
+```
+
+
    ***createViteServer*** creates a development server and additional configs make sure vite hands control to express
    ***app.use(vite.middelwares)*** ensures that any request to express gets passed back to vite
    ***template*** It is the starting point for the client
