@@ -1,9 +1,9 @@
 import express from "express";
 import fs from "fs"
-import path from 'node:path'
+import path from 'node:path';
+import mongoose from "mongoose";
 import initialLoad from "./middleware/initialLoad.js";
 import "dotenv/config";
-import shopify from "./utils/shopify.js";
 import { createServer as createViteServer } from "vite";
 import authRouter from "./utils/authHandler.js";
 
@@ -12,17 +12,20 @@ const dev = process.env.NODE_ENV == 'dev' || false;
 const app = express();
 
 const createServer = async () => {
+    app.disable("x-powered-by");
 
+    // handling webhooks
+    // app.post("/api/webhooks/:topic",express.text({type:'*/*'}),async)
     // app.use(initialLoad);
     app.use("/api/auth",authRouter);
 
-    
+    mongoose.connect(process.env.MONGO_URL).then(() => console.log('DB connected'))
     const viteServer = await createViteServer({
         root: path.resolve(process.cwd(), "client"),
         server: {
             middlewareMode: true
         },
-        appType: 'custom'
+        appType: 'spa'
     });
     app.use(viteServer.middlewares);
     app.use('*', async (req, res) => {
