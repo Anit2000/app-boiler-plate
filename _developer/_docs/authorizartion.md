@@ -15,9 +15,9 @@ For embedded apps we use App Bridge [see docs](_developer/_docs/app_bridge.md) w
 
 #### Session Token flow from client to app's backend
 
-[Session Token from from client to app's backend](/_developer/resources/jwt-auth-flow-.png)
+![Session Token from from client to app's backend](/_developer/resources/jwt-auth-flow-.png)
 
 
 #### Session Token processing in app's backend
 
-[Session Token porcessing in app's backend](/_developer//resources/jwt-request-flow-.webp)
+![Session Token porcessing in app's backend](/_developer//resources/jwt-request-flow-.webp)
