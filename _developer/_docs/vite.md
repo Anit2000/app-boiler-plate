@@ -23,8 +23,8 @@ Right now we only have tackeled the development code we'll do the production one
 ```
 
 
-   ***createViteServer*** creates a development server and additional configs make sure vite hands control to express
-   ***app.use(vite.middelwares)*** ensures that any request to express gets passed back to vite
+   ***createViteServer*** creates a development server and additional configs make sure vite hands control to express<br>
+   ***app.use(vite.middelwares)*** ensures that any request to express gets passed back to vite<br>
    ***template*** It is the starting point for the client
 
 Note : For production we'll be serving the react/client file statically in express.js
