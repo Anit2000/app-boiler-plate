@@ -21,3 +21,6 @@ For embedded apps we use App Bridge [see docs](_developer/_docs/app_bridge.md) w
 #### Session Token processing in app's backend
 
 ![Session Token porcessing in app's backend](/_developer//resources/jwt-request-flow-.webp)
+
+
+#### [Shopify official Doc](https://shopify.dev/docs/apps/build/authentication-authorization/session-tokens)
